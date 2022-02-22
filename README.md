@@ -19,10 +19,10 @@ Python 3.3 added implicit namespace packages from [PEP 420](https://www.python.o
             module.py
 ```
 
-It is extremely important that every distribution that uses the namespace package omits the __init__.py or uses a pkgutil-style __init__.py. If any distribution does not, it will cause the namespace logic to fail and the other sub-packages will not be importable.
+It is extremely important that every distribution that uses the namespace package omits the `__init__.py` or uses a pkgutil-style` __init__.py`. If any distribution does not, it will cause the namespace logic to fail and the other sub-packages will not be importable.
 
 When using multiple namespace packages within the same repository:
-> Because mynamespace doesn’t contain an __init__.py, setuptools.find_packages() won’t find the sub-package. You must use setuptools.find_namespace_packages() instead or explicitly list all packages in your `setup.py`. For example:
+> Because mynamespace doesn’t contain an `__init__.py`, setuptools.find_packages() won’t find the sub-package. You must use setuptools.find_namespace_packages() instead or explicitly list all packages in your `setup.py`. For example:
 
 ```
   from setuptools import setup, find_namespace_packages
